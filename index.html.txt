@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign In — MyApp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="left-panel">
+        <div class="hero">
+          <h2>Welcome back</h2>
+          <p>Sign in to continue to MyApp — your place to share & explore.</p>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="auth-card">
+          <div class="brand">
+            <div class="brand-mark">MA</div>
+            <h1>MyApp</h1>
+          </div>
+
+          <form id="signin-form" autocomplete="on" novalidate>
+            <div class="input-group">
+              <label for="identifier">Email or phone</label>
+              <input id="identifier" name="identifier" type="text" placeholder="you@example.com or +91..." required>
+              <div class="error" id="id-error"></div>
+            </div>
+
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="Enter your password" minlength="6" required>
+              <div class="error" id="pw-error"></div>
+            </div>
+
+            <div class="row between small">
+              <label class="checkbox">
+                <input id="remember" type="checkbox">
+                <span>Remember me</span>
+              </label>
+              <a href="#" class="link">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn primary">Log in</button>
+
+            <div class="divider"><span>or</span></div>
+
+            <button type="button" class="btn social" id="social-google">Continue with Google</button>
+
+            <p class="small muted">Don't have an account? <a href="#" class="link">Sign up</a></p>
+          </form>
+        </div>
+
+        <footer class="footer">© <span id="year"></span> MyApp</footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

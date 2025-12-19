@@ -1,0 +1,44 @@
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const form = document.getElementById('signin-form');
+const idInput = document.getElementById('identifier');
+const pwInput = document.getElementById('password');
+const idErr = document.getElementById('id-error');
+const pwErr = document.getElementById('pw-error');
+
+function validate() {
+  let ok = true;
+  idErr.textContent = '';
+  pwErr.textContent = '';
+
+  if (idInput.value.trim().length < 3) {
+    idErr.textContent = 'Enter a valid email or phone.';
+    ok = false;
+  }
+
+  if (pwInput.value.length < 6) {
+    pwErr.textContent = 'Password must be at least 6 characters.';
+    ok = false;
+  }
+  return ok;
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!validate()) return;
+
+  const payload = {
+    identifier: idInput.value.trim(),
+    password: pwInput.value,
+    remember: document.getElementById('remember').checked
+  };
+
+  // === IMPORTANT ===
+  // Do NOT send credentials to unknown endpoints. In real apps,
+  // send this to a secure backend over HTTPS and verify on server.
+  // Below is a placeholder showing how you'd call a backend API.
+  console.log('Login payload (send to server):', payload);
+
+  // Simulate success
+  alert('Login attempt recorded (demo).\nFor real authentication, connect to a backend or use Firebase/Auth0.');
+});
