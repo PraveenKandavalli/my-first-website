@@ -10,4 +10,5 @@ function login() {
         message.style.color = "red";
         message.innerText = "Invalid username or password";
     }
+
 }
